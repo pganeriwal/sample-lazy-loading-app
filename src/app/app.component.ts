@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommunicationService } from './services/communication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample-lazy-loading-app';
+  constructor(private communicationService: CommunicationService) {
+    this.communicationService.setData('Hello from AppComponent');
+  }
 }
